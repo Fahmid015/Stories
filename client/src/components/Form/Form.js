@@ -92,7 +92,6 @@ const Form = () => {
           variant="contained"
           color="secondary"
           size="small"
-          type="submit"
           fullWidth
           onCLick={clear}
         >
