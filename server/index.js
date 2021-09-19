@@ -2,10 +2,24 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
+import dotenv from "dotenv";
 
-// Qd26dCFIQPNg0eGx
 const app = express();
+dotenv.config();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+
+const PORT = process.env.PORT || 5000;
+const mode = process.env.CONNECTION_URL;
+
+mongoose
+  .connect(mode, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() =>
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+  )
+  .catch((error) => console.log(error.message));
