@@ -14,6 +14,7 @@ import { GoogleLogin } from "react-google-login";
 import Icon from "./icon";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
+import { signin, signup } from "../../actions/auth";
 
 const initialState = {
   firstName: "",
@@ -34,11 +35,11 @@ const Auth = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // if (isSignup) {
-    //   dispatch(signup(formData), history);
-    // } else {
-    //   dispatch(signup(formData), history);
-    // }
+    if (isSignup) {
+      dispatch(signup(formData, history));
+    } else {
+      dispatch(signin(formData, history));
+    }
   };
 
   const handleChange = (e) => {
@@ -50,7 +51,7 @@ const Auth = () => {
 
   const switchMode = () => {
     setIsSignup((prevIsSignUp) => !prevIsSignUp);
-    handleShowPassword(false);
+    setShowPassword(false);
   };
 
   const googleSuccess = async (res) => {
