@@ -15,6 +15,9 @@ export default makeStyles((theme) => ({
     color: "rgba(0,183,255, 1)",
     textDecoration: "none",
   },
+  dp: {
+    display: "flex",
+  },
   image: {
     marginLeft: "15px",
   },
@@ -39,5 +42,18 @@ export default makeStyles((theme) => ({
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
+  },
+  [theme.breakpoints.down("sm")]: {
+    appBar: {
+      flexDirection: "column",
+    },
+    profile: {
+      flexDirection: "column",
+      width: "80%",
+      margin: "0 auto",
+    },
+    dp: {
+      margin: "1rem auto",
+    },
   },
 }));

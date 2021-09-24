@@ -48,7 +48,7 @@ const Navbar = () => {
       <Toolbar className={classes.toolbar}>
         {user ? (
           <div className={classes.profile}>
-            <div style={{ display: "flex" }}>
+            <div className={classes.dp}>
               <Avatar
                 className={classes.purple}
                 alt={user.result.name}
