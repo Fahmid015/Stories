@@ -71,14 +71,16 @@ const Navbar = () => {
             </Button>
           </div>
         ) : (
-          <Button
-            component={Link}
-            to="/auth"
-            variant="contained"
-            color="primary"
-          >
-            Login
-          </Button>
+          <div className={classes.profile}>
+            <Button
+              component={Link}
+              to="/auth"
+              variant="contained"
+              color="primary"
+            >
+              Login
+            </Button>
+          </div>
         )}
       </Toolbar>
     </AppBar>
