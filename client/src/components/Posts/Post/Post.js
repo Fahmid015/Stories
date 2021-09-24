@@ -32,7 +32,7 @@ const Post = ({ post, setCurrentId }) => {
           <ThumbUpAlt fontSize="small" />
           &nbsp;
           {post.likes.length > 2
-            ? `You and {&nbsp} ${post.likes.length - 1} others`
+            ? `You and ${post.likes.length - 1} others`
             : `${post.likes.length} like${post.likes.length > 1 ? "s" : ""}`}
         </Fragment>
       ) : (
