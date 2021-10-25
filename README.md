@@ -2,9 +2,9 @@
 https://stori3s.netlify.app
 
 # Stack: (MERN)
-Front-end: React (with Redux)
-Back-end: Node.js (express.js)
-Database: MongoDB
+1. Front-end: React (with Redux)
+2. Back-end: Node.js (express.js)
+3. Database: MongoDB
 
 # Run it locally
 To run the webapp locally follow the steps below:
